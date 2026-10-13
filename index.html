@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 3 - Dashboard de Productos</title>
+
+  <!-- Carga de CDN de Chart.js para la gráfica -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .seccion {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1;
+      min-width: 320px;
+      max-width: 600px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Panel de Control de Productos (Práctica 3)</h1>
+
+  <div class="contenedor">
+    <!-- Contenedor para la lista / tabla de datos -->
+    <div class="seccion" id="tabla-datos">
+      <h2>Lista de Productos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio ($)</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody id="filas-productos">
+          <!-- Las filas se inyectan dinámicamente desde app.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Contenedor para el gráfico dinámico -->
+    <div class="seccion">
+      <h2>Visualización de Precios</h2>
+      <canvas id="miGrafica"></canvas>
+    </div>
+  </div>
+
+  <!-- Enlace al archivo de lógica JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
